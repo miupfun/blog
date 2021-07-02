@@ -10,6 +10,8 @@ class RouterParser {
         const params = queryString.parse(urlInfo.query)
         console.log("urlInfo", urlInfo)
         console.log("params", params)
+        urlInfo.query = params
+        urlInfo.req = req;
     }
 }
 
