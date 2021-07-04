@@ -1,5 +1,5 @@
 const http = require("http");
-const RouterParser = require("./RouterParser");
+const Router = require("./Router");
 
 
 class Application {
@@ -11,15 +11,12 @@ class Application {
     constructor(port) {
         this.port = port
         this.server = null;
-        this.routerParser = new RouterParser()
+        this.router = new Router()
     }
 
     boot() {
         this.server = http.createServer(((req, res) => {
-            console.log('request coming')
-            const requestInfo = this.routerParser.parse(req)
-            res.writeHead(200);
-            res.end("hello world")
+            this.router.handle(req, res);
         }));
         this.server.listen(this.port, () => {
             console.log("server start success")
