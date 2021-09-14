@@ -1,2 +1,4 @@
 .idea
 */**/node_modules
+.DS_Store
+nodejs入门教程之文件系统(七)/.DS_Store
