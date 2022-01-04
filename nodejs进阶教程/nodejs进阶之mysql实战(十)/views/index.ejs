@@ -1,13 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title><%= title%></title>
 </head>
+
 <body>
-<h1>
-    <!--  这个title就是渲染模板引擎时传入的数据变量 -->
-    <%= title%>
-</h1>
+    <a href="/logout.do">注销</a>
+    <div>
+        <h1>
+            <!--  这个title就是渲染模板引擎时传入的数据变量 -->
+            <%= title%>
+        </h1>
+        <div>
+            <h2>当前用户</h2>
+            <p>用户ID：<%= currentUser.user_id%></p>
+            <p>用户名：<%= currentUser.username%></p>
+        </div>
+
+        <div>
+            <h2>所有用户</h2>
+            <% users.forEach(function(user){%>
+            <div>
+                <p>用户ID：<%= user.user_id%></p>
+                <p>用户名：<%= user.username%></p>
+            </div>
+            <% }) %>
+        </div>
+    </div>
 </body>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+    }
+</style>
+
 </html>

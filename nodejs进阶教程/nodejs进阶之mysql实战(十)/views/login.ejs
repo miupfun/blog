@@ -1,13 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title><%= title%></title>
 </head>
+
 <body>
-<h1>
-    <!--  这个title就是渲染模板引擎时传入的数据变量 -->
-    <%= title%>
-</h1>
+    
+    <div>
+        <h1>
+            <!--  这个title就是渲染模板引擎时传入的数据变量 -->
+            <%= title%>
+        </h1>
+        <form method="post" action="/login.do">
+            <p style="color: red;"><%= error%></p>
+            <div>
+                <label>用户名：</label>
+                <input name="username" value="">
+            </div>
+            <div>
+                <label>密码：</label>
+                <input name="password" type="password" value="">
+            </div>
+            <button type="submit">登录</button>
+            <a href="/register.html">注册</button>
+        </form>
+    </div>
 </body>
+<style>
+    body {
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+
 </html>
